@@ -1,0 +1,36 @@
+
+ * Legal input
+ * Illegal input
+   * input filters
+     * what: prevent illegal input from reaching functional code
+     * what: no errorr message; filter silently
+     * e.g.: textbox only display integer input typed into its field
+     * e.g.: menu list to allow only valid inputs
+     * test: illegal inputs is categorized correctly as illegal?
+     * test: can bypass filter?
+   * input checks
+     * what: if valid, then process, else show error message
+     * test: read error message = read dev minds = know what to test next 
+   * exceptions
+     * what: more general error handling
+
+ * Normal input 
+   * what: inputs that user & dev expect
+   * e.g.: Shift+c = uppercase C
+ * Special input
+   * what: inputs entered accidentally
+   * e.g.: Ctrl+C, Unicode, LPT1, escape characters, symbols.
+
+ * Default input
+   * test: populate expected default value?
+     * e.g.: "ALL"
+     * test: delete populated default value & leave it blank
+     * test: if is numberic default value, +1 or -1
+     * test: if is string default value, add prefix, postfix, change it.
+   * test: leave blank to trigger default value routine
+ * User-supplied input
+   * test: think what output u want (e.g. error msg), then input
+   * test: observe the ouptut, then choose input to force output to change
+   * test: first time output = generated from uninitialized state
+   * test: 2nd time ouptut = generated from previously initialized state
+   * test: how this output will change, test to change it.

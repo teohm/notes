@@ -1,0 +1,3 @@
+Code Paths
+ * test: aware branching caused by inputs
+ * test: if/else, while, for.

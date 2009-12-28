@@ -1,0 +1,30 @@
+Problems:
+ * features are rarely independent from each other
+ * bugs that surface only when features interact with each other
+
+Solution:
+ * tourist metaphor
+   * decomposition based on _intent_ rather than features/structure
+   * to see as much as possible in as short period time as possible
+   * to choose a mix of landmarks to visit
+   * tourist guidebooks segment destination into districts
+
+Districts:
+ * Business district
+   * "Back of the box" features
+   * that appear in marketing/sales demo
+ * Historical district
+   * Legacy code
+   * poorly understood
+ * Tourist district
+   * attract novice users
+   * experience users seldom use
+ * Entertainment district
+   * supportive features
+   * fill out the corners
+ * Hotel district
+   * test software when it is "at rest"
+   * ??? 
+ * Seedy district
+   * places where ppl doing bad & illegal things
+   * places of vulnerability

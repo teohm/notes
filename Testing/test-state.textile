@@ -1,0 +1,10 @@
+State
+ * what: software remembers
+ * what: state needs to be stored in correct scope
+
+How to test
+ * Use state info to find related inputs
+   * what: if 2 inputs are related, should be tested together
+ * use state info to identify input sequence
+   * e.g.: can shopping cart become too full?
+   * what: accumulating state 
