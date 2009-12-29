@@ -4,61 +4,160 @@ Problems:
 
 Solution:
  * tourist metaphor
-   * decomposition based on _intent_ rather than features/structure
-   * to see as much as possible in as short period time as possible
-   * to choose a mix of landmarks to visit
-   * tourist guidebooks segment destination into districts
+ ** decomposition based on _intent_ rather than features/structure
+ ** to see as much as possible in as short period time as possible
+ ** to choose a mix of landmarks to visit
+ ** tourist guidebooks segment destination into districts
 
 Districts:
  * Business district
-   * User "get their business done" features
-   * important features
-   * "Back of the box" features
-   * that appear in marketing/sales demo
-   * tour: Guidebook Tour
-     * execute scenarios written in User Manual as faithfully
+ ** User "get their business done" features
+ ** important features
+ ** "Back of the box" features
+ ** that appear in marketing/sales demo
+ ** tour: Guidebook Tour
+ *** execute scenarios written in User Manual as faithfully
 
-   * tour: Blogger's Tour
-     * follow third-party advice, e.g. online forums etc
-   * tour: Pundit's Tour
-     * create test cases describe complaints of unhappy reviewers
-   * tour: Competior's Tour
-     * test the system using a competing system's guidebook
-     * test the system using an existing system's guidebook
+ ** tour: Blogger's Tour
+ *** follow third-party advice, e.g. online forums etc
+ ** tour: Pundit's Tour
+ *** create test cases describe complaints of unhappy reviewers
+ ** tour: Competior's Tour
+ *** test the system using a competing system's guidebook
+ *** test the system using an existing system's guidebook
 
-   * tour: Money Tour
-     * follow the sales's customer demo
-   * tour: Skeptical Customer Tour
-     * What if I want to do this?
-     * How would I do that?
+ ** tour: Money Tour
+ *** follow the sales's customer demo
+ ** tour: Skeptical Customer Tour
+ *** What if I want to do this?
+ *** How would I do that?
 
-   * tour: Landmark Tour
-     * identify key features (landmarks)
-     * choose a set of landmarks, decide their ordering, visit one by one
-     * landmark coverage map to track progress
+ ** tour: Landmark Tour
+ *** identify key features (landmarks)
+ *** choose a set of landmarks, decide their ordering, visit one by one
+ *** landmark coverage map to track progress
 
-   * tour: Intellectual Tour
-     * asking the software hard questions
-     * How do we make the software work as hard as possible?
-     * Which features will stretch it to its limits?
-     * Which inputs might fool its error-checking routines?
-     * Which inputs & internal data will stress its capability to produce output
-     * e.g. test Word Processor: use the most complicated document
-   * tour: Arrogant American Tour
-     * ask silly question
-     * we do it because we can (system allow us to do so)
+ ** tour: Intellectual Tour
+ *** asking the software hard questions
+ *** How do we make the software work as hard as possible?
+ *** Which features will stretch it to its limits?
+ *** Which inputs might fool its error-checking routines?
+ *** Which inputs & internal data will stress its capability to produce output
+ **** e.g. test Word Processor: use the most complicated document
+ ** tour: Arrogant American Tour
+ *** ask silly question
+ *** we do it because we can (system allow us to do so)
+
+ ** tour: FedEx Tour
+ *** concentrate on data
+ *** identify inputs that are stored & follow them
+ **** e.g. when address is stored, where it gets displayed, what use/modify it?
+ *** find every  feature that touches this data
+
+ ** tour: After-Hours Tour
+ *** maintenance tasks, archive data, back-up files, scheduled tasks
+ ** tour: Morning-Commute Tour
+ *** test startup scripts, which seldom exercised!
+ 
+ ** tour: Garbage Collector's Tour
+ *** go screen by screen, dialog by dialog, to check obvious things
+ *** choose a goal
+ **** e.g. check all menu items, all labels
+ *** then visit each one in the list as fast as possible
+
  * Historical district
-   * Legacy code
-   * poorly understood
+ ** Legacy code
+ ** poorly understood
+
+ ** tour: Bad-Neighborhood Tour
+ *** Revisit buggy sections, because bugs tend to congregate
+ *** when buggy section identified, take Garbage Collector's tour through nearby features to verify fixes didn't introduce any new bugs
+
+ ** tour: Museum Tour
+ *** untouched legacy code - identfied by last modified date
+ *** old code put into new environment tend to be failure prone
+ 
+ ** tour: Prior Version Tour
+ *** enhancement/update version
+ *** run all scenarios that applied to prior version on this version
+
  * Tourist district
-   * attract novice users
-   * experience users seldom use
+ ** attract novice users
+ ** experience users seldom use
+ ** tours about visiting functionality quickly
+
+ ** tour: Collector's Tour
+ *** collect outputs from software as many as possible
+ *** test every possible outcome, until you can claim you have been everywhere, seen everything, and completed your collection
+ *** it's a large tour, so take it as group activity
+
+ ** tour: Lonely Business Tour
+ *** choose the furthest/deepest feature burried in ur app
+ *** longest path: e.g. need to navigate many screens before reaching it
+
+ ** tour: Supermodel Tour
+ *** not about function/details, is about looks & first impressions
+ *** only on UI
+ *** Do they render properly, performance good? GUI refresh properly?
+ *** use color correctly, consistently? consisten GUI controls?
+ *** violate an conventions or standards?
+
+ ** tour: TOGOF Tour
+ *** Test One Get One Free
+ *** Run 3 copies of same app simultaneously
+ *** Then try open same file, ask them do same thing the same time
+
+ ** tour: Scottish Pub Tour
+ *** test hard to find features
+ *** large & complicated applications
+ *** how: talk to user groups, read blogs, spend time touring depths of ur app
+
  * Entertainment district
-   * supportive features
-   * fill out the corners
+ ** supporting features, not mainline features
+ ** fill out the corners
+
+ ** tour: Supporting Actor Tour
+ *** supporting features that share the screen with main features
+ *** they are nearby main features, higher visibility to users
+ *** e.g. if test purchase product, also test product review
+ *** e.g. if search products, also test related product links
+ 
+ ** tour: Back Alley Tour
+ *** test the least-used or least-tested features
+
+ ** tour: Mixed-Destination Tour
+ *** test most popular + least popular features in a Landmark tour
+ *** see how they interact
+
+ ** tour: All-Nighter/Clubbing Tour
+ *** never close the app
+ *** issues: data build-up in memory, memory leask, data corruption, race conditions
+ *** extra: use same feature continuously, keep file opened
+ *** test: keep app opened, keep files opened, don't click save to avoid potential reset
+ *** test: connect remote resource & never disconnect, then run other tests / move data around at the same time.
+
+h4. Should i test these 2 features together?
+Answer 3 questions, YES if any of these questions is yes:
+ * Input question: Is there an input processed by both features?
+ * Output question: Do they visible in same UI? Do they generate same output?
+ * Data question: Do they operate on shared internal data/session? Do they manipulate same stored information?
+
  * Hotel district
-   * test software when it is "at rest"
-   * ??? 
+ ** test software when it is "at rest"
+
+ ** tour: Rained-Out Tour
+ *** start an operation, then stop it
+ *** e.g. search for flights, but quickly cancel when started
+ *** exercise every "cancel" operation
+ *** how: if no cancel button, try Esc key, Back button, Shift-F4 to close app
+ *** start an operation, then start it again, without stopping it first.
+ *** issue: inability to clean up after itself
+
+ ** tour: Couch Potato Tour
+ *** submit blank inputs, default values, filling in as little as possible
+ *** paging through screens without clicking any buttons
+ *** least efforts to navigate through the app
+
  * Seedy district
-   * places where ppl doing bad & illegal things
-   * places of vulnerability
+ ** places where ppl doing bad & illegal things
+ ** places of vulnerability
