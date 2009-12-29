@@ -11,8 +11,42 @@ Solution:
 
 Districts:
  * Business district
+   * User "get their business done" features
+   * important features
    * "Back of the box" features
    * that appear in marketing/sales demo
+   * tour: Guidebook Tour
+     * execute scenarios written in User Manual as faithfully
+
+   * tour: Blogger's Tour
+     * follow third-party advice, e.g. online forums etc
+   * tour: Pundit's Tour
+     * create test cases describe complaints of unhappy reviewers
+   * tour: Competior's Tour
+     * test the system using a competing system's guidebook
+     * test the system using an existing system's guidebook
+
+   * tour: Money Tour
+     * follow the sales's customer demo
+   * tour: Skeptical Customer Tour
+     * What if I want to do this?
+     * How would I do that?
+
+   * tour: Landmark Tour
+     * identify key features (landmarks)
+     * choose a set of landmarks, decide their ordering, visit one by one
+     * landmark coverage map to track progress
+
+   * tour: Intellectual Tour
+     * asking the software hard questions
+     * How do we make the software work as hard as possible?
+     * Which features will stretch it to its limits?
+     * Which inputs might fool its error-checking routines?
+     * Which inputs & internal data will stress its capability to produce output
+     * e.g. test Word Processor: use the most complicated document
+   * tour: Arrogant American Tour
+     * ask silly question
+     * we do it because we can (system allow us to do so)
  * Historical district
    * Legacy code
    * poorly understood
