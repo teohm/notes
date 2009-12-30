@@ -161,3 +161,46 @@ Answer 3 questions, YES if any of these questions is yes:
  * Seedy district
  ** places where ppl doing bad & illegal things
  ** places of vulnerability
+ ** try to break the software
+
+ ** tour: Saboteur
+ *** 1. Force software to take some action
+ *** 2. Understand what resource it needs to complete that action
+ *** 3. Remove/restrict those resources in varying degrees
+ *** e.g. add/delete files, unplag network cables, run on problematic machine
+ *** fault injection
+ 
+ ** tour: Antisocial Tour
+ *** enter less likely / bad inputs
+ *** if real user would do A, Antisocial tour never do A, but sth less likely
+ *** subtour: Opposite tour
+ **** How many items you want to purchase? 14,963
+ **** How many pages to print? -12
+ **** To test error-handling capability
+ *** subtour: Crime Spree Tour
+ **** invoke error messages, if no error then you found a bug!
+ **** Input wrong type, wrong format, too long, too short
+ **** break the constraints of every input
+ **** If app wants positive number, give negative
+ **** If app wants integer, gives a string
+ *** subtour: Wrong Turn Tour
+ **** do things in wrong order
+ **** e.g. Check out before putting anything into shopping cart
+ **** e.g. Return an item you didn't purchase.
+ **** e.g. Change delivery options before you complete purchase
+
+ ** tour: Obsessive-Compulsive Tour
+ *** repetition
+ *** perform same action over and over
+ *** repeat, redo, copy, paste, borrow, and repeat
+ *** click next screen, back again, change something, repeat
+
+
+h3. Put Tour Into Use
+ * Think: "Go test this app" vs "Go run this tour"
+ * Tour has a goal, to test certain things, across & combine features
+ * Tour guide tester on "what should i test"
+ * Tour provides a way to categorize/rank/track tests, so that we know what tour suitable for what situation
+  
+
+
